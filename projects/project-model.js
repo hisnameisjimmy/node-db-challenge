@@ -10,12 +10,12 @@ function find() {
 }
 
 function findById(id) {
-  return db("schemes")
+  return db("projects")
     .where({ id })
     .first();
 }
 
-function add() {
+function add(project) {
     db('projects')
     .insert(project)
         .then(ids => {

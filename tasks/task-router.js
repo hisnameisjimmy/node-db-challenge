@@ -17,6 +17,7 @@ router.post("/", (req, res) => {
 
   db.add(resourceData)
     .then(resource => {
+        console.log(resource);
       res.status(201).json(resource);
     })
     .catch(err => {

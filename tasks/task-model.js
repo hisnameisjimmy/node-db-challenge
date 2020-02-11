@@ -9,16 +9,16 @@ function find() {
   return db("tasks");
 }
 
-function findById(id) {
+function findById(task_id) {
   return db("tasks")
-    .where({ id })
+    .where({ task_id })
     .first();
 }
 
-function add() {
+function add(task) {
   db("tasks")
     .insert(task)
-    .then(ids => {
-      return findById(ids[0]);
+    .then(task_id => {
+      return findById(task_id[0]);
     });
 }

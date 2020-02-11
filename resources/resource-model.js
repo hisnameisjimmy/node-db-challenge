@@ -9,16 +9,16 @@ function find() {
   return db("resources");
 }
 
-function findById(id) {
+function findById(project_id) {
   return db("resources")
-    .where({ id })
+    .where({ project_id })
     .first();
 }
 
-function add() {
+function add(resource) {
   db("resources")
     .insert(resource)
-    .then(ids => {
-      return findById(ids[0]);
+    .then(project_id => {
+      return findById(project_id[0]);
     });
 }
