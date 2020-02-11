@@ -16,7 +16,7 @@ function findById(project_id) {
 }
 
 function add(resource) {
-  db("resources")
+  return  db("resources")
     .insert(resource)
     .then(project_id => {
       return findById(project_id[0]);

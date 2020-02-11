@@ -16,7 +16,7 @@ function findById(id) {
 }
 
 function add(project) {
-    db('projects')
+    return db('projects')
     .insert(project)
         .then(ids => {
             return findById(ids[0]);

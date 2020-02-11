@@ -16,8 +16,8 @@ router.post("/", (req, res) => {
   const projectData = req.body;
 
   db.add(projectData)
-    .then(scheme => {
-      res.status(201).json(scheme);
+    .then(project => {
+      res.status(201).json(project);
     })
     .catch(err => {
       res.status(500).json({ message: "Failed to create new project" });
